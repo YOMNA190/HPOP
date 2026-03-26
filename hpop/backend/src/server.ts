@@ -1,3 +1,8 @@
+/**
+ * @file server.ts
+ * @description نقطة الدخول الرئيسية لخادم الواجهة الخلفية.
+ * يقوم بتهيئة Express و Socket.io و Prisma و Redis.
+ */
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
@@ -25,6 +30,9 @@ import userRoutes from './routes/users';
 
 dotenv.config();
 
+/**
+ * تطبيق Express الرئيسي.
+ */
 const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
