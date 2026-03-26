@@ -71,8 +71,8 @@ Ensure you have the following installed:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/YOMNA190/Happiness-Project-Full.git
-    cd Happiness-Project-Full
+    git clone https://github.com/YOMNA190/HPOP.git
+    cd HPOP
     ```
 
 2.  **Backend Setup:**
@@ -123,7 +123,7 @@ npm run dev
 ## Project Structure
 
 ```
-Happiness-Project-Full/
+HPOP/
 ├── app/                 # Main Frontend Application (React, Vite, TypeScript)
 │   ├── public/
 │   ├── src/
@@ -239,8 +239,8 @@ For any inquiries or support, please contact [YOMNA190](https://github.com/YOMNA
 
 1.  **استنساخ المستودع:**
     ```bash
-    git clone https://github.com/YOMNA190/Happiness-Project-Full.git
-    cd Happiness-Project-Full
+    git clone https://github.com/YOMNA190/HPOP.git
+    cd HPOP
     ```
 
 2.  **إعداد الواجهة الخلفية:**
@@ -291,7 +291,7 @@ npm run dev
 ## هيكل المشروع
 
 ```
-Happiness-Project-Full/
+HPOP/
 ├── app/                 # تطبيق الواجهة الأمامية الرئيسي (React, Vite, TypeScript)
 │   ├── public/
 │   ├── src/
