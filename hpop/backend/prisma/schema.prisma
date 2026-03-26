@@ -1,0 +1,258 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  nameAr    String?  @map("name_ar")
+  role      Role     @default(TENANT)
+  region    String?  @default("Qena")
+  avatar    String?
+  password  String
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  maintenanceRequests MaintenanceRequest[]
+  chatMessages        ChatMessage[]
+  projectTasks        ProjectTask[]
+  notifications       Notification[]
+
+  @@map("users")
+}
+
+model MaintenanceRequest {
+  id             String    @id @default(cuid())
+  category       Category
+  description    String
+  photos         Json      @default("[]")
+  status         Status    @default(SUBMITTED)
+  priority       Priority  @default(MEDIUM)
+  assignedTeam   String?   @map("assigned_team")
+  internalNotes  String?   @map("internal_notes")
+  slaBreached    Boolean   @default(false) @map("sla_breached")
+  satisfaction   Int?      // 1-5 stars rating
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+  resolvedAt     DateTime? @map("resolved_at")
+  
+  // Location for heatmap
+  unitId         String?   @map("unit_id")
+  unitX          Float?    @map("unit_x")
+  unitY          Float?    @map("unit_y")
+  
+  // Relations
+  userId         String    @map("user_id")
+  user           User      @relation(fields: [userId], references: [id])
+  chatMessages   ChatMessage[]
+
+  @@index([status])
+  @@index([category])
+  @@index([userId])
+  @@index([createdAt])
+  @@map("maintenance_requests")
+}
+
+model ChatMessage {
+  id        String   @id @default(cuid())
+  message   String
+  createdAt DateTime @default(now()) @map("created_at")
+  
+  // Relations
+  requestId String   @map("request_id")
+  request   MaintenanceRequest @relation(fields: [requestId], references: [id], onDelete: Cascade)
+  userId    String   @map("user_id")
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@index([requestId])
+  @@index([userId])
+  @@map("chat_messages")
+}
+
+model ProjectTask {
+  id           String       @id @default(cuid())
+  title        String
+  titleAr      String?      @map("title_ar")
+  category     TaskCategory
+  description  String?
+  startDate    DateTime     @map("start_date")
+  endDate      DateTime     @map("end_date")
+  deadline     DateTime?
+  status       TaskStatus   @default(NOT_STARTED)
+  progress     Int          @default(0) // 0-100
+  dependencies Json?        // array of task ids
+  criticalPath Boolean      @default(false) @map("critical_path")
+  createdAt    DateTime     @default(now()) @map("created_at")
+  updatedAt    DateTime     @updatedAt @map("updated_at")
+  
+  // Relations
+  assigneeId   String?      @map("assignee_id")
+  assignee     User?        @relation(fields: [assigneeId], references: [id])
+
+  @@index([status])
+  @@index([category])
+  @@index([assigneeId])
+  @@index([endDate])
+  @@map("project_tasks")
+}
+
+model Campaign {
+  id          String   @id @default(cuid())
+  name        String
+  nameAr      String?  @map("name_ar")
+  description String?
+  spend       Float    @default(0)
+  impressions Int      @default(0)
+  clicks      Int      @default(0)
+  conversions Int      @default(0)
+  targetRegions Json  @default("[]") @map("target_regions")
+  startDate   DateTime @map("start_date")
+  endDate     DateTime @map("end_date")
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  // Daily metrics for bar chart race
+  dailyMetrics CampaignDailyMetric[]
+
+  @@index([active])
+  @@index([startDate])
+  @@map("campaigns")
+}
+
+model CampaignDailyMetric {
+  id          String   @id @default(cuid())
+  date        DateTime
+  spend       Float    @default(0)
+  impressions Int      @default(0)
+  clicks      Int      @default(0)
+  conversions Int      @default(0)
+  
+  // Relations
+  campaignId  String   @map("campaign_id")
+  campaign    Campaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+
+  @@unique([campaignId, date])
+  @@index([campaignId])
+  @@index([date])
+  @@map("campaign_daily_metrics")
+}
+
+model Inquiry {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  message   String
+  region    String   @default("Qena")
+  unitType  String?  @map("unit_type")
+  latitude  Float?
+  longitude Float?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([region])
+  @@index([createdAt])
+  @@map("inquiries")
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  title     String
+  titleAr   String?  @map("title_ar")
+  message   String
+  messageAr String?  @map("message_ar")
+  type      NotificationType @default(INFO)
+  read      Boolean  @default(false)
+  link      String?
+  createdAt DateTime @default(now()) @map("created_at")
+  
+  // Relations
+  userId    String   @map("user_id")
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([read])
+  @@map("notifications")
+}
+
+model Report {
+  id        String   @id @default(cuid())
+  type      ReportType
+  format    String   @default("pdf")
+  status    String   @default("pending") // pending, processing, completed, failed
+  fileUrl   String?  @map("file_url")
+  filters   Json?    // report filters
+  createdAt DateTime @default(now()) @map("created_at")
+  completedAt DateTime? @map("completed_at")
+
+  @@index([status])
+  @@index([createdAt])
+  @@map("reports")
+}
+
+// Enums
+enum Role {
+  TENANT
+  MANAGER
+  ADMIN
+}
+
+enum Category {
+  CLEANING
+  AC
+  PLUMBING
+  ELECTRICAL
+  SECURITY
+  OTHER
+}
+
+enum Status {
+  SUBMITTED
+  ASSIGNED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+enum TaskCategory {
+  FINISHING
+  MEP
+  LANDSCAPING
+  INTERIOR_DESIGN
+  STRUCTURAL
+}
+
+enum TaskStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  BLOCKED
+  COMPLETED
+}
+
+enum NotificationType {
+  INFO
+  SUCCESS
+  WARNING
+  ERROR
+}
+
+enum ReportType {
+  MAINTENANCE
+  PROJECT
+  MARKETING
+  FINANCIAL
+}
