@@ -1,10 +1,12 @@
 # Happiness Plaza Operations Platform (HPOP)
 
+![HPOP Logo](https://via.placeholder.com/150)
+
 ## Project Overview
 
 The **Happiness Plaza Operations Platform (HPOP)** is a comprehensive facility management and real estate operations platform designed to streamline and enhance the management of properties, services, and user interactions. Developed with a modern tech stack, HPOP aims to provide a robust, scalable, and user-friendly solution for managing complex operational workflows, particularly in the real estate sector in regions like Qena, Egypt.
 
-## Features
+## 🚀 Features
 
 *   **User Authentication & Authorization:** Secure user login, registration, and role-based access control.
 *   **Real-time Communication:** Instant updates and notifications for critical events using WebSockets.
@@ -16,43 +18,60 @@ The **Happiness Plaza Operations Platform (HPOP)** is a comprehensive facility m
 *   **Advanced UI Components:** Rich and accessible user interface built with modern UI libraries.
 *   **Background Job Processing:** Efficient handling of long-running tasks.
 
-## Technologies Used
+## 🛠️ Tech Stack
 
 ### Frontend (`app` directory)
 
-The frontend application is built using cutting-edge web technologies to deliver a dynamic and responsive user experience.
+![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-7.x-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Radix UI](https://img.shields.io/badge/Radix_UI-^1.1.15-737373?style=for-the-badge&logo=radix-ui&logoColor=white)
+![GSAP](https://img.shields.io/badge/GSAP-3.x-88CE02?style=for-the-badge&logo=greensock&logoColor=white)
+![Three.js](https://img.shields.io/badge/Three.js-^0.183.2-black?style=for-the-badge&logo=three.js&logoColor=white)
+![D3.js](https://img.shields.io/badge/D3.js-^7.9.0-F9A03C?style=for-the-badge&logo=d3.js&logoColor=white)
+![React Three Fiber](https://img.shields.io/badge/React_Three_Fiber-^9.5.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![Leaflet](https://img.shields.io/badge/Leaflet-^1.9.4-1A551A?style=for-the-badge&logo=leaflet&logoColor=white)
+![Zustand](https://img.shields.io/badge/Zustand-^5.0.12-2D2D2D?style=for-the-badge&logo=zustand&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-^1.13.6-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
+![i18next](https://img.shields.io/badge/i18next-^25.10.9-26A69A?style=for-the-badge&logo=i18next&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-^12.38.0-0055FF?style=for-the-badge&logo=framer&logoColor=white)
+![Tanstack Query](https://img.shields.io/badge/Tanstack_Query-^5.95.2-FF4154?style=for-the-badge&logo=react-query&logoColor=white)
+![Socket.io Client](https://img.shields.io/badge/Socket.io_Client-^4.8.3-010101?style=for-the-badge&logo=socket.io&logoColor=white)
 
-*   **React 19 & TypeScript:** For building robust and type-safe user interfaces.
-*   **Vite:** A fast and efficient build tool for modern web development.
-*   **Tailwind CSS:** A utility-first CSS framework for rapid UI development and consistent styling.
-*   **Radix UI:** A collection of accessible, unstyled components for building high-quality design systems.
-*   **GSAP, Three.js, D3.js, React Three Fiber:** For advanced animations, 3D graphics, and data visualization.
-*   **Leaflet & React Leaflet:** For interactive mapping functionalities.
-*   **Zustand:** A lightweight and flexible state management solution.
-*   **Axios:** Promise-based HTTP client for making API requests.
-*   **i18next & React i18next:** For internationalization and localization.
-*   **Framer Motion:** A production-ready motion library for React.
-*   **Tanstack React Query:** For data fetching, caching, and synchronization.
-*   **Socket.io-client:** For real-time, bidirectional event-based communication.
+The frontend application is built using cutting-edge web technologies to deliver a dynamic and responsive user experience.
 
 ### Backend (`hpop/backend` directory)
 
-The backend API is developed with a focus on performance, scalability, and security.
+![Node.js](https://img.shields.io/badge/Node.js-v18.x-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-4.x-000000?style=for-the-badge&logo=express&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14.x-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+![bcryptjs](https://img.shields.io/badge/bcryptjs-^2.4.3-673AB7?style=for-the-badge&logo=bcrypt&logoColor=white)
+![jsonwebtoken](https://img.shields.io/badge/jsonwebtoken-^9.0.0-000000?style=for-the-badge&logo=json-web-tokens&logoColor=white)
+![BullMQ](https://img.shields.io/badge/BullMQ-^5.0.0-FF5722?style=for-the-badge&logo=redis&logoColor=white)
+![ioredis](https://img.shields.io/badge/ioredis-^5.0.0-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![Winston](https://img.shields.io/badge/Winston-^3.x-171717?style=for-the-badge&logo=winston&logoColor=white)
+![Socket.io](https://img.shields.io/badge/Socket.io-^4.8.3-010101?style=for-the-badge&logo=socket.io&logoColor=white)
+![Jest](https://img.shields.io/badge/Jest-^29.x-C21325?style=for-the-badge&logo=jest&logoColor=white)
+![Supertest](https://img.shields.io/badge/Supertest-^6.x-000000?style=for-the-badge&logo=mocha&logoColor=white)
 
-*   **Node.js & Express:** A powerful JavaScript runtime and web application framework.
-*   **TypeScript:** For type-safe backend development.
-*   **Prisma:** A modern database toolkit (ORM) for efficient and type-safe database access.
-*   **PostgreSQL (implied):** A robust relational database system.
-*   **bcryptjs & jsonwebtoken:** For secure password hashing and token-based authentication.
-*   **BullMQ & ioredis:** For robust background job processing and Redis integration.
-*   **Winston:** A versatile logging library.
-*   **Socket.io:** For real-time communication with the frontend.
-*   **Jest & Supertest:** For comprehensive unit and integration testing.
+The backend API is developed with a focus on performance, scalability, and security.
 
 ### Infrastructure & Tools
 
-*   **Docker & Docker Compose:** For containerization and simplified deployment of both frontend and backend services.
-*   **Nginx:** As a reverse proxy and web server.
+![Docker](https://img.shields.io/badge/Docker-24.x-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Docker Compose](https://img.shields.io/badge/Docker_Compose-2.x-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-1.x-009639?style=for-the-badge&logo=nginx&logoColor=white)
+
+## 📸 Screenshots / GIFs
+
+*(Add screenshots or GIFs here to showcase the application's UI/UX and key features.)*
+
+## 🌐 Live Demo
+
+*(Add live demo link here after deployment, e.g., `https://hpop.vercel.app`)*
 
 ## Getting Started
 
@@ -152,7 +171,7 @@ Contributions are welcome! Please follow these steps:
 1.  Fork the repository.
 2.  Create a new branch (`git checkout -b feature/YourFeature`).
 3.  Make your changes.
-4.  Commit your changes (`git commit -m 'Add some feature'`).
+4.  Commit your changes (`git commit -m 'feat: Add some feature'`).
 5.  Push to the branch (`git push origin feature/YourFeature`).
 6.  Open a Pull Request.
 
@@ -162,7 +181,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-For any inquiries or support, please contact [YOMNA190](https://github.com/YOMNA190).
+For any inquiries or support, please contact Yomna via:
+
+*   **Email:** [your-email@example.com](mailto:your-email@example.com)
+*   **Portfolio:** [Your Portfolio Link](https://your-portfolio.com)
+*   **GitHub:** [YOMNA190](https://github.com/YOMNA190)
 
 ---
 
@@ -172,7 +195,7 @@ For any inquiries or support, please contact [YOMNA190](https://github.com/YOMNA
 
 **منصة عمليات هابينيس بلازا (HPOP)** هي منصة شاملة لإدارة المرافق والعمليات العقارية، مصممة لتبسيط وتعزيز إدارة الممتلكات والخدمات وتفاعلات المستخدمين. تم تطوير HPOP باستخدام مجموعة تقنيات حديثة، وتهدف إلى توفير حل قوي وقابل للتطوير وسهل الاستخدام لإدارة سير العمليات المعقدة، خاصة في قطاع العقارات في مناطق مثل قنا، مصر.
 
-## الميزات
+## 🚀 الميزات
 
 *   **مصادقة المستخدم وتخويله:** تسجيل دخول المستخدمين وتسجيلهم بشكل آمن، والتحكم في الوصول بناءً على الأدوار.
 *   **الاتصال في الوقت الفعلي:** تحديثات وإشعارات فورية للأحداث الهامة باستخدام WebSockets.
@@ -184,43 +207,17 @@ For any inquiries or support, please contact [YOMNA190](https://github.com/YOMNA
 *   **مكونات واجهة مستخدم متقدمة:** واجهة مستخدم غنية وسهلة الوصول مبنية على مكتبات واجهة المستخدم الحديثة.
 *   **معالجة المهام الخلفية:** معالجة فعالة للمهام طويلة الأمد.
 
-## التقنيات المستخدمة
+## 🛠️ التقنيات المستخدمة
 
 ### الواجهة الأمامية (مجلد `app`)
 
 تم بناء تطبيق الواجهة الأمامية باستخدام أحدث تقنيات الويب لتقديم تجربة مستخدم ديناميكية ومتجاوبة.
 
-*   **React 19 و TypeScript:** لبناء واجهات مستخدم قوية وآمنة من حيث النوع.
-*   **Vite:** أداة بناء سريعة وفعالة لتطوير الويب الحديث.
-*   **Tailwind CSS:** إطار عمل CSS يعتمد على الأدوات المساعدة لتطوير واجهة المستخدم بسرعة وتصميم متناسق.
-*   **Radix UI:** مجموعة من المكونات التي يمكن الوصول إليها وغير المصممة لبناء أنظمة تصميم عالية الجودة.
-*   **GSAP, Three.js, D3.js, React Three Fiber:** للرسوم المتحركة المتقدمة والرسومات ثلاثية الأبعاد وتصور البيانات.
-*   **Leaflet و React Leaflet:** لوظائف الخرائط التفاعلية.
-*   **Zustand:** حل خفيف ومرن لإدارة الحالة.
-*   **Axios:** عميل HTTP يعتمد على الوعود لإجراء طلبات API.
-*   **i18next و React i18next:** للتدويل والتوطين.
-*   **Framer Motion:** مكتبة حركة جاهزة للإنتاج لـ React.
-*   **Tanstack React Query:** لجلب البيانات والتخزين المؤقت والمزامنة.
-*   **Socket.io-client:** للاتصال في الوقت الفعلي ثنائي الاتجاه القائم على الأحداث.
-
 ### الواجهة الخلفية (مجلد `hpop/backend`)
 
 تم تطوير واجهة برمجة التطبيقات الخلفية مع التركيز على الأداء وقابلية التوسع والأمان.
 
-*   **Node.js و Express:** بيئة تشغيل JavaScript قوية وإطار عمل لتطبيقات الويب.
-*   **TypeScript:** لتطوير الواجهة الخلفية الآمنة من حيث النوع.
-*   **Prisma:** مجموعة أدوات قاعدة بيانات حديثة (ORM) للوصول الفعال والآمن من حيث النوع إلى قاعدة البيانات.
-*   **PostgreSQL (مُضمن):** نظام قاعدة بيانات علائقية قوي.
-*   **bcryptjs و jsonwebtoken:** لتجزئة كلمات المرور الآمنة والمصادقة القائمة على الرمز المميز.
-*   **BullMQ و ioredis:** لمعالجة المهام الخلفية القوية وتكامل Redis.
-*   **Winston:** مكتبة تسجيل متعددة الاستخدامات.
-*   **Socket.io:** للاتصال في الوقت الفعلي مع الواجهة الأمامية.
-*   **Jest و Supertest:** لاختبارات الوحدة والتكامل الشاملة.
-
 ### البنية التحتية والأدوات
-
-*   **Docker و Docker Compose:** للحاويات والنشر المبسط لكل من خدمات الواجهة الأمامية والخلفية.
-*   **Nginx:** كوكيل عكسي وخادم ويب.
 
 ## البدء
 
@@ -320,7 +317,7 @@ HPOP/
 1.  قم بعمل Fork للمستودع.
 2.  أنشئ فرعًا جديدًا (`git checkout -b feature/YourFeature`).
 3.  قم بإجراء تغييراتك.
-4.  قم بتثبيت تغييراتك (`git commit -m 'Add some feature'`).
+4.  قم بتثبيت تغييراتك (`git commit -m 'feat: Add some feature'`).
 5.  ادفع إلى الفرع (`git push origin feature/YourFeature`).
 6.  افتح طلب سحب (Pull Request).
 
@@ -330,4 +327,8 @@ HPOP/
 
 ## الاتصال
 
-لأية استفسارات أو دعم، يرجى الاتصال بـ [YOMNA190](https://github.com/YOMNA190).
+لأية استفسارات أو دعم، يرجى الاتصال بيومنا عبر:
+
+*   **البريد الإلكتروني:** [your-email@example.com](mailto:your-email@example.com)
+*   **المحفظة:** [Your Portfolio Link](https://your-portfolio.com)
+*   **GitHub:** [YOMNA190](https://github.com/YOMNA190)
