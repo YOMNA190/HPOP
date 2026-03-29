@@ -327,8 +327,5 @@ HPOP/
 
 ## الاتصال
 
-لأية استفسارات أو دعم، يرجى الاتصال بيومنا عبر:
-
-*   **البريد الإلكتروني:** [your-email@example.com](mailto:your-email@example.com)
-*   **المحفظة:** [Your Portfolio Link](https://your-portfolio.com)
-*   **GitHub:** [YOMNA190](https://github.com/YOMNA190)
+لأية استفسارات أو دعم، يرجى التواصل عبر :
+)GitHub:** [YOMNA190](https://github.com/YOMNA190)
